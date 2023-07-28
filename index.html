@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Random funkcija
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        // 1. Palyginti du skaičius a ir b. Išvesti į konsolę, kuris didesnis arba jie lygūs. (4 taškai)
+
+        // let a = prompt("Įveskite skaičių a: ");
+        // let b = prompt("Įveskite skaičių b: ");
+
+        // if (a > b)
+        //     console.log(`skaičius a (${a}) yra didesnis`)
+        // else if (a < b)
+        //     console.log(`skaičius b (${b}) yra didesnis`)
+        // else
+        //     console.log(`skaičiai a ir b (${a} ir ${b}) yra lygūs`)
+
+
+        //2. Naudojant for ciklą, išvesti į konsolę skaičius nuo 1 iki 10. (5 taškai)
+
+        // for (let i = 1; i <= 10; i++) console.log(i)
+
+        // 3. Naudojant for ciklą, išvesti į konsolę skaičius nuo 0, 2, 4, 6, 8, 10. (5 taškai)
+
+        // for (let i = 0; i <= 10; i = i + 2) console.log(i)
+
+        // 4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
+
+        // for (let i = 1; i <= 5; i++) console.log(rand(1, 10))
+
+        // 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10.
+        // Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
+
+        // let a = 0
+        // while (a != 5) {
+        //     a = rand(1, 10)
+        //     console.log(a)
+        // }
+
+        // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30.
+        //Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
+
+        // const arr = []
+        // let max = 0;
+
+        // for (let i = 1; i < 30; i++) arr.push(rand(10, 30))
+
+        // for (let j = 0; j <= arr.length; j++) {
+        //     if (arr[j] > max) max = arr[j]
+        // }
+
+        // console.log(`Didžiausias skaičius masyve yra ${max}`)
+
+        // 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100.
+        // Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
+
+        // const letterArray = [];
+        // const alphabet = "ABCD";
+        // let a = 0;
+        // let b = 0;
+        // let c = 0;
+        // let d = 0;
+
+        // function generateRandomLetter() {
+
+        //     return alphabet[Math.floor(Math.random() * alphabet.length)];
+
+        // }
+
+        // for (let i = 1; i <= 100; i++) letterArray.push(generateRandomLetter());
+
+        // for (let j = 0; j <= letterArray.length; j++) {
+        //     if (letterArray[j] === "A") a++
+        //         if (letterArray[j] === "B") b++
+        //             if (letterArray[j] === "C") c++
+        //                 if (letterArray[j] === "D") d++
+
+        // }
+
+        // console.log(`Raidžių "A" yra ${a}`);
+        // console.log(`Raidžių "B" yra ${b}`);
+        // console.log(`Raidžių "C" yra ${c}`);
+        // console.log(`Raidžių "D" yra ${d}`);
+
+        // 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji.
+        // Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
+        // Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą.
+        // Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
+
+        // function lygineSuma(a, b) {
+        //     if (typeof a == 'number' && typeof b == 'number') {
+        //         if ((a + b) % 2 == 0) return (a + b)
+        //         else return ("skaičių suma nelyginė")
+        //     } else if (Array.isArray(a) && Array.isArray(b)) {
+        //         if ((a.length + b.length) % 2 == 0) return (a.length + b.length)
+        //         else return ("masyvų ilgių suma nelyginė")
+        //     } else return ("klaida - argumentų tipai nesutampa");
+
+        // }
+
+        // 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį.
+        // Turi būti patikrinimas, kad kintamasis yra skaičius. Funkcija turi grąžinti ar pateiktas skaičius yra pirminis
+        // (pirminis skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
+
+        // function pirminisSkaicius(a) {
+        //     let arPirminis = true
+        //     if (a == 1) return ('vienetas nėra nei pirminis, nei sudėtinis skaičius')
+        //     else if (a > 1) {
+        //         for (let i = 2; i < a; i++) {
+        //             if (a % i == 0) {
+        //                 arPirminis = false
+        //                 break
+        //             }
+
+        //         }
+        //     }
+        //     return arPirminis
+        // }
+
+        // 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10.
+        // Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų)
+
+        function telefonoNumeris(a) {
+            if (a.every(arSkaicius) && a.length == 10) {
+                a = a.map(String)
+                return (`(${a[0]+a[1]+a[2]}) ${a[3]+a[4]+a[5]}-${a[6]+a[7]+a[8]+a[9]}`)
+            } else return ("netinkamas numeris")
+        }
+
+        function arSkaicius(s) {
+            return typeof s == 'number'
+        }
+    </script>
+</body>
+
+</html>
